@@ -21,11 +21,3 @@ RUN mkdir ${SPARK_HOME} && \
     curl -L -o /tmp/spark.tgz http://d3kbcqa49mib13.cloudfront.net/spark-1.6.2-bin-hadoop2.6.tgz && \
     tar xzf /tmp/spark.tgz --strip-components=1 --directory ${SPARK_HOME} && \
     rm /tmp/spark.tgz
-
-RUN git clone https://github.com/spark-jobserver/spark-jobserver /opt/spark-jobserver
-
-WORKDIR /opt/spark-jobserver
-
-RUN sbt job-server-extras/assembly && sbt job-server-tests/package && sbt buildPyExamples
-
-COPY start.sh start.sh
