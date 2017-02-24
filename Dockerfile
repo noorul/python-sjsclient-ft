@@ -28,3 +28,5 @@ RUN curl http://www.h2database.com/h2-2014-04-05.zip -o h2.zip && \
     mkdir -p /opt/h2-data
 
 COPY h2-server.sh /opt/h2/bin
+
+EXPOSE 1521
