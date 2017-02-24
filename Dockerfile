@@ -21,3 +21,10 @@ RUN mkdir ${SPARK_HOME} && \
     curl -L -o /tmp/spark.tgz http://d3kbcqa49mib13.cloudfront.net/spark-1.6.2-bin-hadoop2.6.tgz && \
     tar xzf /tmp/spark.tgz --strip-components=1 --directory ${SPARK_HOME} && \
     rm /tmp/spark.tgz
+
+RUN curl http://www.h2database.com/h2-2014-04-05.zip -o h2.zip && \
+    unzip h2.zip -d /opt/ && \
+    rm h2.zip && \
+    mkdir -p /opt/h2-data
+
+COPY h2-server.sh /opt/h2/bin
