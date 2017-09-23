@@ -18,7 +18,7 @@ RUN pip install --upgrade pip && \
     pip3 install py4j pyhocon tox
 
 RUN mkdir ${SPARK_HOME} && \
-    curl -L -o /tmp/spark.tgz http://d3kbcqa49mib13.cloudfront.net/spark-1.6.2-bin-hadoop2.6.tgz && \
+    curl -L -o /tmp/spark.tgz http://d3kbcqa49mib13.cloudfront.net/spark-2.1.0-bin-hadoop2.7.tgz && \
     tar xzf /tmp/spark.tgz --strip-components=1 --directory ${SPARK_HOME} && \
     rm /tmp/spark.tgz
 
